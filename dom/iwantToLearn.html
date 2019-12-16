@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM操作-我要学</title>
+</head>
+<body>
+    <h1>我要学<span class="txt">____</span></h1>
+    <ul class="box">
+        <li>前端<input type="checkbox" value="前端"></li>
+        <li>Java<input type="checkbox" value="Java"></li>
+        <li>PHP<input type="checkbox" value="PHP"></li>
+    </ul>
+    <div><input type="text" class="ipt"><button class="add">新增</button>
+    </div>
+    <script>
+        var text = document.querySelector('.txt')
+        var addBtn = document.querySelector('.add')
+        var box = document.querySelector('.box')
+        var checkboxs = document.querySelectorAll('.box[type=checkbox]')
+        var input = document.querySelector('.ipt')
+        var values = []
+
+        addBtn.onclick = function(){
+            var node = document.createElement('li')
+            node.innerHTML = input.value
+            var checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            checkbox.value = input.value
+            node.appendChild(checkbox)
+            box.appendChild(node)
+        }
+        box.onclick = function(e){
+            console.log(e.target.value)
+            text.innerText = [...document.querySelectorAll('.box [type=checkbox]')].filter(checkbox=>checkbox.checked)
+                .map(checkbox=>checkbox.value).join(',')
+        } 
+  
+
+    </script>
+
+</body>
+</html>
