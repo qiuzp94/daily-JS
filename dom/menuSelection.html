@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM操作-菜单选择</title>
+    <style>
+        section {
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .card {
+            position: absolute;
+            border: 1px solid #ccc;
+            width: 200px;
+            display: none;
+        }
+
+        .card li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>你选择了<span class="choice"></span></h1>
+        <button class="btn">点我</button>
+        <ul class="card">
+            <li>菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul>
+    </section>
+
+    <script>
+        var choice = document.querySelector('.choice')
+        var btn = document.querySelector('.btn')
+        var card = document.querySelector('.card')
+        var items = document.querySelectorAll('.card li')
+
+        btn.onclick = function(e){
+            card.style.display = 'block'
+            e.stopPropagation()
+        }
+        items.forEach(item => {
+            item.onclick = function(e){
+                choice.innerText = this.innerText
+                e.stopPropagation()
+            }
+        });
+        document.onclick = function(e){
+            card.style.display = 'none'
+            e.stopPropagation()
+        }
+        
+    </script>
+</body>
+
+</html>
