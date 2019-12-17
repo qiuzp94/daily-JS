@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插入排序算法</title>
+</head>
+<h1>请打开控制台查看结果</h1>
+
+<body>
+    <script>
+        function insertionSort(array) {
+            if (Object.prototype.toString.call(array).slice(8, -1) === 'Array') {
+                console.time('插入排序耗时：')
+                for (var i = 1; i < array.length; i++) {
+                    var key = array[i]
+                    var j = i - 1 
+                    while (j >= 0 && array[j] > key) {
+                        array[j + 1] = array[j]
+                        j--
+                    }
+                    array[j + 1] = key
+                }
+                console.timeEnd('插入排序耗时：')
+                return array
+            } else {
+                return 'Array is no not array'
+            }
+
+        }
+        var arr = [2, 5, 78, 212, 772, 2246, 73, 11, 5, 545, 11]
+        console.log(insertionSort(arr))
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
