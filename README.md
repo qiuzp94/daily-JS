@@ -5,3 +5,4 @@
 * 排序算法
     * [快速排序](https://qiuzp94.github.io/daily-JS/sort/quickSort.html)  
     * [插入排序](https://qiuzp94.github.io/daily-JS/sort/insertionSort.html)  
+    * [归并排序](https://qiuzp94.github.io/daily-JS/sort/mergeSort.html)  
