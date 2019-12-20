@@ -6,4 +6,5 @@
     * [快速排序](https://qiuzp94.github.io/daily-JS/sort/quickSort.html)  
     * [插入排序](https://qiuzp94.github.io/daily-JS/sort/insertionSort.html)  
     * [归并排序](https://qiuzp94.github.io/daily-JS/sort/mergeSort.html)  
-    * [桶排序](https://qiuzp94.github.io/daily-JS/sort/bucketSort.html)  
+    * [桶排序](https://qiuzp94.github.io/daily-JS/sort/bucketSort.html) 
+    * [基数排序](https://qiuzp94.github.io/daily-JS/sort/radixSort.html)
